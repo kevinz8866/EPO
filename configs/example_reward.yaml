@@ -1,0 +1,46 @@
+num_gpus: 4
+outdir: {your_output_directory}
+fast_dev_run: False
+train:
+  enable: True
+  checkpoint_metric: val/top1_acc
+  checkpoint_mode: max
+  batch_size: 64
+  limit_train_batches: 0.3
+  val_check_interval: 0.5
+val:
+  batch_size: 16
+test:
+  enable: False
+solver:
+  optimizer: adamw
+  num_epochs: 1
+  warmup_epochs: 0
+  lr: 1e-5
+  weight_decay: 0.0
+  lr_policy: constant
+data:
+  dataset: alfred_reward
+  train_anno_path: {your_data_directory}
+  val_anno_path: {your_data_directory}
+  test_anno_path: {your_data_directory}
+  text:
+    use: True
+    max_words: 400
+    verb_dictionary_path: ''
+alfred:
+  subgoal: actions
+  reward_label: True
+  object_info: True
+model:
+  model: language_head
+  aggregator: llama
+  llama:
+    from_pretrained: True
+    weight_type: 'hg'
+    weight_path: {your_weight_path}
+    tokenizer_path: {your_tokenizer_path}
+    generate:
+      num_return_sequences: 1
+  peft:
+    method: 'lora'

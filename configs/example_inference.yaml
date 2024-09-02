@@ -1,0 +1,57 @@
+ckpt_path: None
+num_gpus: 1
+outdir: {your_output_directory}
+fast_dev_run: False
+train:
+  enable: True
+  checkpoint_metric: val/top1_acc
+  checkpoint_mode: max
+  batch_size: 32
+val:
+  val_only: True
+  batch_size: 16
+  log_ED: False
+  predict: True
+  is_test: True
+test:
+  enable: False
+solver:
+  optimizer: adamw
+  num_epochs: 2
+  warmup_epochs: 0
+  lr: 1e-5
+  weight_decay: 0.0
+  lr_policy: constant
+data:
+  dataset: alfred
+  train_anno_path: {your_data_directory}
+  val_anno_path: {your_data_directory}
+  test_anno_path: {your_data_directory}
+  text:
+    use: True
+    max_words: 350
+    verb_dictionary_path: ''
+alfred:
+  subgoal: actions
+model:
+  model: language
+  aggregator: llama
+  llama:
+    from_pretrained: True
+    weight_type: 'ckpt'
+    weight_path: {your_weight_path}
+    tokenizer_path: {your_tokenizer_path}
+    ckpt_path: {your_ckpt_path}
+    generate:
+      num_return_sequences: 1
+      max_new_tokens: 200
+      do_sample: True
+      top_p: .5
+      temperature: 0.3
+      min_length: None
+      use_cache: True
+      top_k: 50
+      repetition_penalty: 1.0
+      length_penalty: 1
+  peft:
+    method: 'lora'

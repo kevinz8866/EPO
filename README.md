@@ -18,9 +18,33 @@ Long-horizon decision-making tasks present significant challenges for LLM-based 
 - [Our Paper](#Our-Paper)
 - [License](#License)
 
+## Setup
+Fist setup ALFRED first following [E.T.](https://github.com/alexpashevich/E.T.)
+
+The setup this repo using commands below:
+```bash
+git clone https://github.com/kevinz8866/EPO
+```
+```bash
+cd EPO
+```
+```bash
+pip install -r requirements.txt
+```
+
 ## Agent Framework 
+Please check out the example configurations in `/configs`. 
+
+The launch command is 
+```bash
+python -m run --cfg configs/example_policy.yaml
+```
+Please note that implementation for modules such as agent exploration, ALFRED interaction, etc are not currently included.
 
 ## EPO
+A demonstration is available in `/epo_demo`. 
+
+This EPO trainer demo is modified from the DPO Trainer implemented by huggingface.
 
 ## Contents
 - [Our Paper](#Our-Paper)
