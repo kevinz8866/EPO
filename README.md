@@ -46,10 +46,6 @@ A demonstration is available in `/epo_demo`.
 
 This EPO trainer demo is modified from the DPO Trainer implemented by huggingface.
 
-## Contents
-- [Our Paper](#Our-Paper)
-- [License](#License)
-
 ## Our Paper 
 
 Our paper is available on [Arxiv](https://arxiv.org/abs/2408.16090). If you find our work  useful, please consider citing us. 
@@ -61,3 +57,7 @@ Our paper is available on [Arxiv](https://arxiv.org/abs/2408.16090). If you find
   year    = {2024}
 }
 ```
+
+## License
+
+This project is released under the MIT license.
