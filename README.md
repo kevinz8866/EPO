@@ -53,7 +53,7 @@ Our paper is available on [Arxiv](https://arxiv.org/abs/2408.16090). If you find
 @article{zhao2024epo,
   title   = {EPO: Hierarchical LLM Agents with Environment Preference Optimization},
   author  = {Qi Zhao and Haotian Fu and Chen Sun and George Konidaris},
-  journal = {EMNLP},
+  journal = {The 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
   year    = {2024}
 }
 ```
